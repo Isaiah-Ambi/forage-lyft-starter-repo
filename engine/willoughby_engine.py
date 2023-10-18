@@ -2,8 +2,9 @@ from engine.engine import Engine
 
 class WilloughbyEngine(Engine):
     def __init__(self, last_service_mileage, current_mileage):
-        super().__init__(last_service_mileage, current_mileage)
         self.current_mileage = current_mileage
+        super().__init__(last_service_mileage)
+        
 
 
     def needs_service(self):

@@ -12,31 +12,31 @@ current_date = datetime.today().date()
 class CarFactory():
     #def __init__():
 
-    def create_calliope(last_service_date, last_service_mileage, current_mileage):
+    def create_calliope(self, last_service_date, last_service_mileage, current_mileage):
         battery = SpindlerBattery(current_date, last_service_date)
         engine = CapuletEngine(last_service_mileage, current_mileage)
-        return engine or battery
+        return engine.needs_service() or battery.needs_service()
         
 
-    def create_glissade(last_service_date, last_service_mileage, current_mileage):
+    def create_glissade(self, last_service_date, last_service_mileage, current_mileage):
         battery = SpindlerBattery(current_date,last_service_date)
         engine = WilloughbyEngine(last_service_mileage, current_mileage)
-        return engine or battery
+        return engine.needs_service() or battery.needs_service()
 
-    def create_palindrome(last_service_date, warning_light_is_on, current_mileage):
+    def create_palindrome(self, last_service_date, warning_light_is_on):
         battery = SpindlerBattery(current_date, last_service_date)
-        engine = SternmanEngine(warning_light_is_on, current_mileage)
-        return engine or battery
+        engine = SternmanEngine(warning_light_is_on)
+        return engine.needs_service() or battery.needs_service()
 
-    def create_rorschach(last_service_date, last_service_mileage, current_mileage):
+    def create_rorschach(self, last_service_date, last_service_mileage, current_mileage):
         battery = NubbinBattery(current_date, last_service_date)
         engine = CapuletEngine(last_service_mileage, current_mileage)
-        return engine or battery
+        return engine.needs_service() or battery.needs_service()
     
-    def create_thovex(last_service_date, last_service_mileage, current_mileage):
+    def create_thovex(self, last_service_date, last_service_mileage, current_mileage):
         battery = NubbinBattery(current_date, last_service_date)
         engine = CapuletEngine(last_service_mileage, current_mileage)
-        return engine or battery
+        return engine.needs_service() or battery.needs_service()
 
 
 '''def main():
