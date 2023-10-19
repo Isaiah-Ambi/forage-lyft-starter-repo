@@ -8,6 +8,6 @@ class SpindlerBattery(Battery):
     def needs_service(self):
         #years_difference = self.current_date.year() - self.last_service_date.year()
         years_difference = calculate_years_difference(self.last_service_date)
-        return years_difference >= 2
+        return years_difference >= 3
 
 
